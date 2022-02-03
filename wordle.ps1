@@ -1,6 +1,6 @@
 $url = 'https://gist.githubusercontent.com/zneak/53f885f1fc5856741cb4/raw/a17a81d15acb8109cda8524c743186901dd269b6/words.txt'
 $words = ((Invoke-WebRequest -Uri $url).Content.toLower() -split '\n' | Select-String '^\w\w\w\w\w$').Line
-$actual =  $words[(Get-Random -Maximum $words.Count)]; 
+$actual = $words[(Get-Random -Maximum $words.Count)]; 
 $max_guess = if ($args[0] -eq "unlimit") {999999} else {6}
 for ($guess_count = 1; $guess_count -le $max_guess; $guess_count++) {
     $guess = (Read-Host -Prompt "Enter your guess ($guess_count / $max_guess)").ToLower()
