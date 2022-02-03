@@ -11,7 +11,7 @@ for ($guess_count = 1; $guess_count -le $max_guess; $guess_count++) {
             return
         } else {
             $remaining = ""
-            for ($i = 0; $i -lt $actual.Length; $i++) {if ($actual[$i] -ne $guess[$i]) {$remaining += $actual[$i]}            }
+            for ($i = 0; $i -lt $actual.Length; $i++) {if ($actual[$i] -ne $guess[$i]) {$remaining += $actual[$i]}}
             for ($i = 0; $i -lt $actual.Length; $i++) {
                 if ($actual[$i] -ne $guess[$i]) {
                     if ($remaining.Contains($guess[$i])) {
